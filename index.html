@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏠 Bangalore Home Price Predictor</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="background-img"></div>
+    <div class="container">
+        <header>
+            <h1>🏡 Bangalore Home Price Predictor</h1>
+            <p>Get an instant estimate of your dream home's price</p>
+        </header>
+        <form id="predictionForm">
+            <label for="uiSqft">📐 Area (in Sq. Ft):</label>
+            <input type="number" id="uiSqft" placeholder="Enter area (e.g. 1000)" required>
+
+            <label>🛏️ BHK:</label>
+            <div class="radio-group" id="bhkOptions">
+                <label><input type="radio" name="uiBHK" value="1">1</label>
+                <label><input type="radio" name="uiBHK" value="2" checked>2</label>
+                <label><input type="radio" name="uiBHK" value="3">3</label>
+                <label><input type="radio" name="uiBHK" value="4">4</label>
+                <label><input type="radio" name="uiBHK" value="5">5</label>
+            </div>
+
+            <label>🛁 Bathrooms:</label>
+            <div class="radio-group" id="bathOptions">
+                <label><input type="radio" name="uiBathrooms" value="1">1</label>
+                <label><input type="radio" name="uiBathrooms" value="2" checked>2</label>
+                <label><input type="radio" name="uiBathrooms" value="3">3</label>
+                <label><input type="radio" name="uiBathrooms" value="4">4</label>
+                <label><input type="radio" name="uiBathrooms" value="5">5</label>
+            </div>
+
+            <label for="uiLocations">📍 Location:</label>
+            <select id="uiLocations" required>
+                <option disabled selected>Select location</option>
+            </select>
+
+            <button type="button" onclick="onClickedEstimatePrice()">🔍 Estimate Price</button>
+            <div id="uiEstimatedPrice" class="result"></div>
+        </form>
+    </div>
+</body>
+</html>
